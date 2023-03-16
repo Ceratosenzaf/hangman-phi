@@ -66,4 +66,5 @@ const play = () => {
   })
 }
 
+window.alert("Buon compleanno ❤️. Indovina il tuo regalo")
 play()
