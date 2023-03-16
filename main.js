@@ -52,9 +52,17 @@ const play = () => {
   }
 
   const handleClick = (el) => {
+    img.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'start'
+    })
     el.disabled = true
-    if(!LETTERS_IN_WORD.includes(el.innerText)) handleError(el)
-    else handleCorrect(el)
+    
+    setTimeout(()=> {
+      if(!LETTERS_IN_WORD.includes(el.innerText)) handleError(el)
+      else handleCorrect(el)
+    }, 100)
   }
 
   letters.forEach((l) => {
@@ -66,5 +74,4 @@ const play = () => {
   })
 }
 
-window.alert("Buon compleanno ❤️. Indovina il tuo regalo")
 play()
